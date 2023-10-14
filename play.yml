@@ -15,5 +15,5 @@
   - name: Install java
     yum: name=java state=present
   - name: Download Jenkins
-    get_url:  url=https://pkg.jenkins.io/redhat-stable/jenkins.repo
+    get_url: url=https://pkg.jenkins.io/redhat-stable/jenkins.repo
 
