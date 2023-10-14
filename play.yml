@@ -1,0 +1,17 @@
+---
+- hosts: all
+  become: true
+  become_method: sudo
+  tasks:
+  - name: Install docker
+    yum: name=docker state=present
+    #when: ansible_os_family == "Debian"
+  - name: Install package git
+    yum: name=git state=present
+  - name: clone from git
+    shell: git clone https://github.com/naveen-victory/myproject.git
+  - name: Install java
+    yum: name=java state=present
+  - name: Download Jenkins
+    get_url:  url=https://pkg.jenkins.io/redhat-stable/jenkins.repo
+
