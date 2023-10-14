@@ -6,6 +6,8 @@
   - name: Install docker
     yum: name=docker state=present
     #when: ansible_os_family == "Debian"
+  - name: start docker
+    command: systemctl start docker    
   - name: Install package git
     yum: name=git state=present
   - name: clone from git
