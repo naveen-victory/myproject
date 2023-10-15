@@ -1,4 +1,4 @@
-FROM fedora:latest
+FROM fedora:34
 RUN yum update -y && yum install httpd -y
 COPY . /var/www/html
 CMD ["/usr/sbin/httpd","-D","FOREGROUND"]
